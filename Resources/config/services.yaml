@@ -1,0 +1,16 @@
+services:
+
+  _defaults:
+    public: true
+
+  rikudou_qr_payment.settings:
+    class: Rikudou\QrPaymentBundle\QrPayment\Config\QrPaymentSettings
+
+  rikudou_qr_payment.qrpayment:
+    class: Rikudou\QrPaymentBundle\QrPayment\QrPaymentFactory
+    arguments:
+      ['@rikudou_qr_payment.settings']
+
+  Rikudou\QrPaymentBundle\QrPayment\QrPaymentFactory:
+    public: false
+    alias: rikudou_qr_payment.qrpayment

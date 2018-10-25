@@ -1,0 +1,31 @@
+rikudou_qr_payment:
+  cz:
+    # you don't have to set all three, either account and bank code or IBAN
+    account: ''
+    bankCode: ''
+    iban: ''
+    options:
+      variableSymbol: ''
+      specificSymbol: ''
+      constantSymbol: ''
+      currency: 'CZK'
+      comment: ''
+      repeat: 7 # how many days should the bank try to repeat the payment
+      internalId: ''
+      amount: 0.0
+      country: 'CZ'
+      dueDays: 14 # in how many days is the payment due
+  sk:
+    account: ''
+    bankCode: ''
+    iban: ''
+    options:
+      variableSymbol: ''
+      specificSymbol: ''
+      constantSymbol: ''
+      currency: 'EUR'
+      comment: ''
+      amount: 0.0
+      country: 'SK'
+      swift: '' # required
+      dueDays: 14
