@@ -19,14 +19,14 @@ If you use [Symfony Flex](https://github.com/symfony/flex)
 the bundle should be enabled automatically.
 
 The default config file is created
-via [endroid/installer](https://github.com/endroid/installer).
+via [rikudou/installer](https://github.com/RikudouSage/RikudouInstaller).
 
 ## Configuration
 
 Go to the `config/packages/rikudou_qr_payment.yaml` and edit the details.
 
 If the file is not created for any reason, you can find the default config file
-[here](.install/symfony/config/packages/rikudou_qr_payment.yaml).
+[here](.installer/symfony/files/config/packages/rikudou_qr_payment.yaml).
 
 The names should be pretty self-explanatory, you have to configure Czech and Slovak
 defaults separately.
