@@ -16,7 +16,7 @@
     "rikudou/czqrpayment": "^3.0",
     "rikudou/skqrpayment": "^2.0",
     "endroid/qr-code": "^3.2",
-    "rikudou/installer": "^1.0"
+    "rikudou/installer": "^1.1"
   },
   "autoload": {
     "psr-4": {
