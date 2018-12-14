@@ -53,6 +53,7 @@ class Configuration implements ConfigurationInterface
                                 ->scalarNode("constantSymbol")->end()
                                 ->scalarNode("currency")->end()
                                 ->scalarNode("comment")->end()
+                                ->scalarNode("internalId")->end()
                                 ->floatNode("amount")->end()
                                 ->scalarNode("country")->end()
                                 ->scalarNode("swift")->end()
