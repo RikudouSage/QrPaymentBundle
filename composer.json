@@ -13,8 +13,8 @@
     "php": ">=7.2",
     "symfony/framework-bundle": "^4.1",
     "symfony/yaml": "^4.1",
-    "rikudou/czqrpayment": "^3.0",
-    "rikudou/skqrpayment": "^2.0",
+    "rikudou/czqrpayment": "^4.0",
+    "rikudou/skqrpayment": "^2.3",
     "endroid/qr-code": "^3.2",
     "rikudou/installer": "^1.1"
   },

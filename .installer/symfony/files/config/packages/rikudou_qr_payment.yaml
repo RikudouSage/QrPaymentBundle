@@ -25,6 +25,7 @@ rikudou_qr_payment:
       constantSymbol: ''
       currency: 'EUR'
       comment: ''
+      internalId: ''
       amount: 0.0
       country: 'SK'
       swift: '' # required
