@@ -25,23 +25,7 @@ class RikudouQrPaymentExtension extends Extension
         $configurationDefinition = new Configuration();
         $config = $this->processConfiguration($configurationDefinition, $configs);
 
-        $czechConfig = [
-            "accountNumber" => $config["cz"]["account"] ?? null,
-            "bankCode" => $config["cz"]["bankCode"] ?? null,
-            "iban" => $config["cz"]["iban"] ?? null,
-            "options" => $config["cz"]["options"] ?? [],
-        ];
-
-        $slovakConfig = [
-            "accountNumber" => $config["sk"]["account"] ?? null,
-            "bankCode" => $config["sk"]["bankCode"] ?? null,
-            "iban" => $config["sk"]["iban"] ?? null,
-            "options" => $config["sk"]["options"] ?? [],
-        ];
-
-
         $settingsDefinition = $container->getDefinition("rikudou_qr_payment.settings");
-        $settingsDefinition->addArgument($czechConfig);
-        $settingsDefinition->addArgument($slovakConfig);
+        $settingsDefinition->addArgument($config);
     }
 }
