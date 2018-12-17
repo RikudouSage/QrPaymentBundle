@@ -2,7 +2,7 @@
   "name": "rikudou/qr-payment-bundle",
   "type": "symfony-bundle",
   "license": "WTFPL",
-  "description": "Symfony bundle for generating Czech and Slovak QR payments",
+  "description": "Symfony bundle for generating QR payments for Czech, Slovak and European standards",
   "authors": [
     {
       "name": "Dominik Chrástecký",
