@@ -3,8 +3,9 @@
 For Czech and Slovak banks.
 
 This is a Symfony bundle that simplifies work with
-my packages for [Czech](https://github.com/RikudouSage/QrPaymentCZ) and 
-[Slovak](https://github.com/RikudouSage/QrPaymentSK) QR payments.
+my packages for [Czech](https://github.com/RikudouSage/QrPaymentCZ), 
+[Slovak](https://github.com/RikudouSage/QrPaymentSK)
+and [European](https://github.com/RikudouSage/QrPaymentEU) QR payments.
 
 Read the individual documentations of the libraries if you want to know more about them.
 
@@ -28,8 +29,9 @@ Go to the `config/packages/rikudou_qr_payment.yaml` and edit the details.
 If the file is not created for any reason, you can find the default config file
 [here](.installer/symfony/files/config/packages/rikudou_qr_payment.yaml).
 
-The names should be pretty self-explanatory, you have to configure Czech and Slovak
-defaults separately.
+The names should be pretty self-explanatory, you have to configure Czech, Slovak
+and European defaults separately. You can also override defaults for European
+standard for supported countries (Austria, Belgium, Germany, Netherlands).
 
 ## Usage
 
@@ -63,7 +65,27 @@ class MyAwesomeService {
         return $this->qrPaymentFactory->slovak();
     }
     
+    public function getEuropeanQrCode() {
+        return $this->qrPaymentFactory->european();
+    }
+    
+    public function getAustrianQrCode() {
+        return $this->qrPaymentFactory->austrian();
+    }
+    
+    public function getBelgianQrCode() {
+        return $this->qrPaymentFactory->belgian();
+    }
+    
+    public function getGermanQrCode() {
+        return $this->qrPaymentFactory->german();
+    }
+    
+    public function getDutchQrCode() {
+        return $this->qrPaymentFactory->dutch();
+    }
+    
 }
 ```
 
-The methods `czech()` and `slovak()` return new instances with defaults from yaml file.
+The methods in example return new instances with defaults from yaml file.
