@@ -30,3 +30,69 @@ rikudou_qr_payment:
       country: 'SK'
       swift: '' # required
       dueDays: 14
+  eu:
+    iban: ''
+    options:
+      character_set: 'utf-8' # valid options: utf-8, iso-8859-1, iso-8859-2, iso-8859-4, iso-8859-5, iso-8859-7, iso-8859-10, iso-8859-15
+      bic: '' # BIC and SWIFT are the same thing, in this library swift is alias to bic and thus BIC takes precedence
+      swift: ''
+      beneficiary_name: ''
+      amount: 0.0
+      purpose: '' # see the rikudou\EuQrPayment\Sepa\Purpose class
+      remittance_text: ''
+      information: '' # information and comment are the same thing, information has precedence over comment
+      comment: ''
+      currency: 'EUR'
+# uncomment the below lines to set different defaults per supported country, format is the same as for eu
+#  de:
+#    iban: ''
+#    options:
+#      character_set: 'utf-8'
+#      bic: ''
+#      swift: ''
+#      beneficiary_name: ''
+#      amount: 0.0
+#      purpose: ''
+#      remittance_text: ''
+#      information: ''
+#      comment: ''
+#      currency: 'EUR'
+#  at:
+#    iban: ''
+#    options:
+#      character_set: 'utf-8'
+#      bic: ''
+#      swift: ''
+#      beneficiary_name: ''
+#      amount: 0.0
+#      purpose: ''
+#      remittance_text: ''
+#      information: ''
+#      comment: ''
+#      currency: 'EUR'
+#  nl:
+#    iban: ''
+#    options:
+#      character_set: 'utf-8'
+#      bic: ''
+#      swift: ''
+#      beneficiary_name: ''
+#      amount: 0.0
+#      purpose: ''
+#      remittance_text: ''
+#      information: ''
+#      comment: ''
+#      currency: 'EUR'
+#  be:
+#    iban: ''
+#    options:
+#      character_set: 'utf-8'
+#      bic: ''
+#      swift: ''
+#      beneficiary_name: ''
+#      amount: 0.0
+#      purpose: ''
+#      remittance_text: ''
+#      information: ''
+#      comment: ''
+#      currency: 'EUR'

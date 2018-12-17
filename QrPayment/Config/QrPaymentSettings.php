@@ -2,6 +2,13 @@
 
 namespace Rikudou\QrPaymentBundle\QrPayment\Config;
 
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\AustrianSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\BelgianSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\CzechSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\DutchSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\EuropeanSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\GermanSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\SlovakSettings;
 
 class QrPaymentSettings
 {
@@ -9,57 +16,125 @@ class QrPaymentSettings
     /**
      * @var array
      */
-    private $czechConfig;
+    private $config;
 
     /**
-     * @var array
+     * @var null|CzechSettings
      */
-    private $slovakConfig;
+    private $czechSettings = null;
 
-    public function __construct(array $czechConfig, array $slovakConfig)
+    /**
+     * @var null|SlovakSettings
+     */
+    private $slovakSettings = null;
+
+    /**
+     * @var null|EuropeanSettings
+     */
+    private $europeanSettings = null;
+
+    /**
+     * @var null|AustrianSettings
+     */
+    private $austrianSettings = null;
+
+    /**
+     * @var null|BelgianSettings
+     */
+    private $belgianSettings = null;
+
+    /**
+     * @var null|DutchSettings
+     */
+    private $dutchSettings = null;
+
+    /**
+     * @var null|GermanSettings
+     */
+    private $germanSettings = null;
+
+    public function __construct(array $config)
     {
-        $this->czechConfig = $czechConfig;
-        $this->slovakConfig = $slovakConfig;
+        $this->config = $config;
     }
 
-    public function getCzechAccountNumber(): ?string
+    public function getCzechSettings(): CzechSettings
     {
-        return $this->czechConfig["accountNumber"];
+        if (is_null($this->czechSettings)) {
+            $this->czechSettings = new CzechSettings($this->config["cz"] ?? []);
+        }
+
+        return $this->czechSettings;
     }
 
-    public function getCzechBankCode(): ?string
+    public function getSlovakSettings(): SlovakSettings
     {
-        return $this->czechConfig["bankCode"];
+        if (is_null($this->slovakSettings)) {
+            $this->slovakSettings = new SlovakSettings($this->config["sk"] ?? []);
+        }
+
+        return $this->slovakSettings;
     }
 
-    public function getCzechIBAN(): ?string
+    public function getEuropeanSettings(): EuropeanSettings
     {
-        return $this->czechConfig["iban"];
+        if (is_null($this->europeanSettings)) {
+            $this->europeanSettings = new EuropeanSettings($this->config["eu"] ?? []);
+        }
+
+        return $this->europeanSettings;
     }
 
-    public function getSlovakAccountNumber(): ?string
+    public function getAustrianSettings(): AustrianSettings
     {
-        return $this->slovakConfig["accountNumber"];
+        if (is_null($this->austrianSettings)) {
+            $eu = $this->config["eu"] ?? [];
+            $country = $this->config["at"] ?? [];
+            $config = array_replace_recursive($eu, $country);
+
+            $this->austrianSettings = new AustrianSettings($config);
+        }
+
+        return $this->austrianSettings;
     }
 
-    public function getSlovakBankCode(): ?string
+    public function getBelgianSettings(): BelgianSettings
     {
-        return $this->slovakConfig["bankCode"];
+        if (is_null($this->belgianSettings)) {
+            $eu = $this->config["eu"] ?? [];
+            $country = $this->config["be"] ?? [];
+            $config = array_replace_recursive($eu, $country);
+
+            $this->belgianSettings = new BelgianSettings($config);
+        }
+
+        return $this->belgianSettings;
     }
 
-    public function getSlovakIBAN(): ?string
+    public function getDutchSettings(): DutchSettings
     {
-        return $this->slovakConfig["iban"];
+        if (is_null($this->dutchSettings)) {
+            $eu = $this->config["eu"] ?? [];
+            $country = $this->config["nl"] ?? [];
+            $config = array_replace_recursive($eu, $country);
+
+            $this->dutchSettings = new DutchSettings($config);
+        }
+
+        return $this->dutchSettings;
     }
 
-    public function getCzechOptions(): array
+    public function getGermanSettings(): GermanSettings
     {
-        return $this->czechConfig["options"];
-    }
+        if (is_null($this->germanSettings)) {
+            $eu = $this->config["eu"] ?? [];
+            $country = $this->config["de"] ?? [];
+            $config = array_replace_recursive($eu, $country);
 
-    public function getSlovakOptions(): array
-    {
-        return $this->slovakConfig["options"];
+            $this->germanSettings = new GermanSettings($config);
+        }
+
+        return $this->germanSettings;
     }
 
 }
