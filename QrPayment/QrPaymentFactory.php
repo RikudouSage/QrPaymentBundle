@@ -96,7 +96,7 @@ class QrPaymentFactory
                 $settings = $this->settings->getGermanSettings();
                 break;
             default:
-                throw new \LogicException("Could not get the country key ");
+                throw new \LogicException("Could not get the country key");
         }
 
         if (!($settings instanceof EuropeanSettings)) {
@@ -104,7 +104,7 @@ class QrPaymentFactory
         }
 
         if (!$settings->getIban()) {
-            throw new \LogicException("Cannot initiate payment instance without ");
+            throw new \LogicException("Cannot initiate payment instance without IBAN");
         }
         $options = $settings->getOptions();
 
