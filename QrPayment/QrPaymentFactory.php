@@ -10,6 +10,7 @@ use Rikudou\QrPaymentBundle\QrPayment\Helper\CharacterSetStringToConstant;
  * @method \rikudou\EuQrPayment\QrPayment austrian()
  * @method \rikudou\EuQrPayment\QrPayment belgian()
  * @method \rikudou\EuQrPayment\QrPayment dutch()
+ * @method \rikudou\EuQrPayment\QrPayment finnish()
  * @method \rikudou\EuQrPayment\QrPayment german()
  * @method \rikudou\EuQrPayment\QrPayment european()
  */
@@ -73,6 +74,7 @@ class QrPaymentFactory
             "dutch",
             "german",
             "european",
+            "finnish",
         ];
 
         if (!in_array($name, $allowedMethods)) {
@@ -94,6 +96,9 @@ class QrPaymentFactory
                 break;
             case "german":
                 $settings = $this->settings->getGermanSettings();
+                break;
+            case "finnish":
+                $settings = $this->settings->getFinnishSettings();
                 break;
             default:
                 throw new \LogicException("Could not get the country key");

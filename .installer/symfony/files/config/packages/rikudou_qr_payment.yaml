@@ -1,5 +1,5 @@
 rikudou_qr_payment:
-  cz:
+  cz: # Czech Republic
     # you don't have to set all three, either account and bank code or IBAN
     account: ''
     bankCode: ''
@@ -15,7 +15,7 @@ rikudou_qr_payment:
       amount: 0.0
       country: 'CZ'
       dueDays: 14 # in how many days is the payment due
-  sk:
+  sk: # Slovakia
     account: ''
     bankCode: ''
     iban: ''
@@ -30,7 +30,7 @@ rikudou_qr_payment:
       country: 'SK'
       swift: '' # required
       dueDays: 14
-  eu:
+  eu: # Generic European Union settings
     iban: ''
     options:
       character_set: 'utf-8' # valid options: utf-8, iso-8859-1, iso-8859-2, iso-8859-4, iso-8859-5, iso-8859-7, iso-8859-10, iso-8859-15
@@ -44,7 +44,7 @@ rikudou_qr_payment:
       comment: ''
       currency: 'EUR'
 # uncomment the below lines to set different defaults per supported country, format is the same as for eu
-#  de:
+#  de: # Germany
 #    iban: ''
 #    options:
 #      character_set: 'utf-8'
@@ -57,7 +57,7 @@ rikudou_qr_payment:
 #      information: ''
 #      comment: ''
 #      currency: 'EUR'
-#  at:
+#  at: # Austria
 #    iban: ''
 #    options:
 #      character_set: 'utf-8'
@@ -70,7 +70,7 @@ rikudou_qr_payment:
 #      information: ''
 #      comment: ''
 #      currency: 'EUR'
-#  nl:
+#  nl: # Netherlands
 #    iban: ''
 #    options:
 #      character_set: 'utf-8'
@@ -83,7 +83,20 @@ rikudou_qr_payment:
 #      information: ''
 #      comment: ''
 #      currency: 'EUR'
-#  be:
+#  be: # Belgium
+#    iban: ''
+#    options:
+#      character_set: 'utf-8'
+#      bic: ''
+#      swift: ''
+#      beneficiary_name: ''
+#      amount: 0.0
+#      purpose: ''
+#      remittance_text: ''
+#      information: ''
+#      comment: ''
+#      currency: 'EUR'
+#  fi: # Finland
 #    iban: ''
 #    options:
 #      character_set: 'utf-8'

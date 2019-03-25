@@ -7,6 +7,7 @@ use Rikudou\QrPaymentBundle\QrPayment\Config\Country\BelgianSettings;
 use Rikudou\QrPaymentBundle\QrPayment\Config\Country\CzechSettings;
 use Rikudou\QrPaymentBundle\QrPayment\Config\Country\DutchSettings;
 use Rikudou\QrPaymentBundle\QrPayment\Config\Country\EuropeanSettings;
+use Rikudou\QrPaymentBundle\QrPayment\Config\Country\FinnishSettings;
 use Rikudou\QrPaymentBundle\QrPayment\Config\Country\GermanSettings;
 use Rikudou\QrPaymentBundle\QrPayment\Config\Country\SlovakSettings;
 
@@ -52,6 +53,11 @@ class QrPaymentSettings
      * @var null|GermanSettings
      */
     private $germanSettings = null;
+
+    /**
+     * @var null|FinnishSettings
+     */
+    private $finnishSettings = null;
 
     public function __construct(array $config)
     {
@@ -135,6 +141,18 @@ class QrPaymentSettings
         }
 
         return $this->germanSettings;
+    }
+
+    public function getFinnishSettings(): FinnishSettings
+    {
+        if (is_null($this->finnishSettings)) {
+            $eu = $this->config["eu"] ?? [];
+            $country = $this->config["fi"] ?? [];
+            $config = array_replace_recursive($eu, $country);
+            $this->finnishSettings = new FinnishSettings($config);
+        }
+
+        return $this->finnishSettings;
     }
 
 }

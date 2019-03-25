@@ -1,6 +1,6 @@
 # QR Payment Bundle
 
-For Czech and Slovak banks.
+For Czech, Slovak and European banks.
 
 This is a Symfony bundle that simplifies work with
 my packages for [Czech](https://github.com/RikudouSage/QrPaymentCZ), 
@@ -36,8 +36,7 @@ standard for supported countries (Austria, Belgium, Germany, Netherlands).
 ## Usage
 
 This package defines one service, `Rikudou\QrPaymentBundle\QrPayment\QrPaymentFactory`,
-which is used to create objects of instance `\rikudou\CzQrPayment\QrPayment` or
-`\rikudou\SkQrPayment\QrPayment`.
+which is used to create instances of payment classes.
 
 ### Example
 
@@ -83,6 +82,10 @@ class MyAwesomeService {
     
     public function getDutchQrCode() {
         return $this->qrPaymentFactory->dutch();
+    }
+    
+    public function getFinnishQrCode() {
+        return $this->qrPaymentFactory->finnish();
     }
     
 }

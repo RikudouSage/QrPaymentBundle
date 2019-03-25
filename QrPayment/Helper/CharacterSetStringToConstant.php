@@ -28,7 +28,7 @@ class CharacterSetStringToConstant
                 return CharacterSet::ISO_8859_15;
         }
 
-        throw new \InvalidArgumentException("The key is not a valid key for a character set");
+        throw new \InvalidArgumentException("The string '{$key}' is not a valid key for a character set");
     }
 
 }
